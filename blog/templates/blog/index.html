@@ -12,6 +12,8 @@
         </h1>
 
         <!-- Blog Post -->
+        {% load paginate_tags %}
+        {% paginate article_list 2 %}
         {% for article in article_list %}
         <h3>
             <a href="{% url 'blog:detail' article.pk %}">{{ article.title }}</a>
@@ -29,14 +31,7 @@
         {% endfor %}
 
         <!-- Pager -->
-        <ul class="pager">
-            <li class="previous">
-                <a href="#">&larr; Older</a>
-            </li>
-            <li class="next">
-                <a href="#">Newer &rarr;</a>
-            </li>
-        </ul>
+        {% include 'blog/pagination.html' %}
 
     </div>
 
