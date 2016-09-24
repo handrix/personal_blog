@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+    <div class="content-body">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-12">
+                    <h1 class="page-title">关于我</h1>
+                    <article class="post">
+                        <div class="entry-content clearfix">
+                            <figure class="img-responsive-center">
+                                <img class="img-responsive" src="{% static 'img/me.pnq' %}" alt="Developer Image">
+                            </figure>
+                            <p>&nbsp &nbsp 程序员兼职宅男，喜欢看漫画，会弹吉他，弹了6年多还挺厉害的，大学还没毕业最近刚刚拿到一个remote实习的offer
+                            ，恩....再就没什么特长啦，哦！明年TGS一定要去！所以有想去东京的小伙伴可以组队，详细介绍看英文简介吧！ ；）</p>
+                            <p>&nbsp&nbsp&nbsp&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp↓&nbsp&nbsp↓</p>
+                            <p>&nbsp &nbsp shut up！ he is very awesome</p>
+                            <div class="height-40px"></div>
+                            <h2>社交账号</h2>
+                            <br/>
+                            <br/>
+                            <div>
+                                <a href="#"><i class="fa fa-weibo fa-3x" aria-hidden="true"></i></a>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp
+                                <a href="#"><i class="fa fa-weixin fa-3x" aria-hidden="true"></i></a>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp
+                                <a href="#"><i class="fa fa-google-plus fa-3x" aria-hidden="true"></i></a>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp
+                                <a href="#"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic import TemplateView
 from .models import Article, Tag, Category
 import markdown2
 
@@ -70,3 +71,6 @@ class TagView(ListView):
         return super(TagView, self).get_context_data(**kwargs)
         pass
     pass
+
+class AboutMe(TemplateView):
+    template_name = "blog/about.html"
