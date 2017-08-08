@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -5,7 +7,8 @@ from django.views.generic import TemplateView
 from .models import Article, Tag, Category
 import markdown2
 
-class Index(ListView):
+
+class IndexView(ListView):
     template_name = "blog/index.html"
     context_object_name = "article_list"
 
@@ -17,11 +20,12 @@ class Index(ListView):
     def get_context_data(self, **kwargs):
         kwargs['category_list'] = Category.objects.all().order_by('name')
         kwargs['tag_list'] = Tag.objects.all().order_by('name')
-        return super(Index, self).get_context_data(**kwargs)
+        return super(IndexView, self).get_context_data(**kwargs)
         pass
     pass
 
-class Detail(DetailView):
+
+class DetailView(DetailView):
     template_name = "blog/detail.html"
     context_object_name = "article"
     pk_url_kwarg = 'article_id'
@@ -32,11 +36,12 @@ class Detail(DetailView):
         pass
 
     def get_object(self, queryset=None):
-        obj = super(Detail, self).get_object()
+        obj = super(DetailView, self).get_object()
         obj.body = markdown2.markdown(obj.body, extras=['fenced-code-blocks'], )
         return obj
         pass
     pass
+
 
 class CategoryView(ListView):
     template_name = "blog/index.html"
@@ -55,6 +60,7 @@ class CategoryView(ListView):
         pass
     pass
 
+
 class TagView(ListView):
     template_name = "blog/index.html"
     context_object_name = "article_list"
@@ -72,5 +78,6 @@ class TagView(ListView):
         pass
     pass
 
-class AboutMe(TemplateView):
+
+class AboutMeView(TemplateView):
     template_name = "blog/about.html"
